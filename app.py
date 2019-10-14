@@ -4,11 +4,11 @@ import numpy as np
 import pandas as pd
 import pymongo
 import json
+import pickle
 # from flask_pymongo import PyMongo
 from flask import Flask, jsonify, render_template, request
-# import pickle
-# import xgboost
-# model = pickle.load(open('./mode/model.pkl','rb'))
+from sklearn.svm import SVC
+# model = pickle.load(open('./model/model.pkl','rb'))
 
 
 app = Flask(__name__)
@@ -23,13 +23,94 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/signup")
-def signup():
-    return render_template("signup.html")
+@app.route("/form")
+def form():
+    return render_template("form.html")
 
 @app.route("/thanks")
 def thanks():
     return render_template("thanks.html")
+
+
+#prediction function
+def ValuePredictor(to_predict_list):
+    to_predict = np.array(to_predict_list).reshape(1,34)
+    loaded_model = pickle.load(open('./model/model.pkl',"rb"))
+    result = loaded_model.predict(to_predict)
+    return result[0]
+
+
+@app.route('/result',methods = ['POST'])
+def result():
+    if request.method == 'POST':
+        to_predict_list = request.form.to_dict()
+        to_predict_list=list(to_predict_list.values())
+        to_predict_list = list(map(int, to_predict_list))
+        result = ValuePredictor(to_predict_list)
+        
+        if int(result)==1:
+            prediction='Class 1: Psoriasis'
+        elif int(result)==2:
+            prediction='Class 2: Seboreic Dermatitis'
+        elif int(result)==3:
+            prediction = 'Class 3: Lichen Planus'
+        elif int(result)==4:
+            prediction ="Class 4: pityriasis rosea"
+        elif int(result)==5:
+            prediction ="Class 5: Chronic Dermatitis"
+        elif int(result)==6:
+            prediction = "Class 6: Pityriasis Rubra Pilaris"
+            
+        return render_template("form.html",result=prediction)
+
+# @app.route('/result',methods = ['POST'])
+# def result():
+#     if request.method == 'POST':
+#         ery = request.form['erythema']
+#         scal = request.form['scaling']
+#         bor = request.form['borders']
+#         itch = request.form['itching']
+#         koe= request.form['koebner']
+#         poly = request.form['polygonal']
+#         foll = request.form['follicular']
+#         oral = request.form['oral']
+#         knee = request.form['knee']
+#         scalp = request.form['scalp']
+#         history = request.form['history']
+#         mel = request.form['melanin']
+#         eos = request.form["eosinophils"]
+#         pnl = request.form["pnl"]
+#         fib = request.form['fibro']
+#         exo = request.form['exo']
+#         acan = request.form['acan']
+#         kera = request.form['kera']
+#         para = request.form['para']
+#         club = request.form['club']
+#         elon = request.form['elon']
+#         epi = request.form['epi']
+#         pus = request.form['pus']
+#         munro = request.form['munro']
+#         focal = request.form['focal']
+#         lay = request.form['layer']
+#         basal = request.form['basal']
+#         spon = request.form['spon']
+#         saw = request.form['saw']
+#         horn = request.form['horn']
+#         peri = request.form['peri']
+#         mono = request.form['mono']
+#         band = request.form['band']
+#         age = request.form['age']
+
+#         data = ery +" "+ scal +" "+ bor +" "+ itch +" "+" "+koe+" "+poly+" "+foll+" "+oral+" "+knee+" "+scalp+" "+history+" "+ \
+#             mel+" "+eos+" "+pnl+" "+fib+" "+exo+" "+acan+" "+kera+" "+para+" "+club+" "+elon+" "+epi+" "+pus+" "+munro+" "+focal+\
+#             focal+" "+lay+" "+basal+" "+spon+" "+saw+" "+horn+" "+peri+" "+mono+" "+band+" "+age
+#         # print(data)
+#         data
+#         data = [data]
+#         prediction = model.predict(data)
+#         prediction = prediction[0]
+        
+#         return render_template("signup.html",result=prediction)
 
 if __name__ == "__main__":
     app.run(debug=True)

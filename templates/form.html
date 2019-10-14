@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Features</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!-- <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='narrow-jumbotron.css') }}" rel="stylesheet"> -->
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style1.css')}}" media="all">
+<!-- <script type="text/javascript" src="{{url_for ('static', filename ='view.js')}}"></script> -->
+</head>
+<body id="main_body" >
+
+<div class="container">
+<div class="header clearfix">
+  <nav>
+     <ul class="nav nav-pills float-right">
+         <li class="nav-item">
+              <a class="nav-link active mr-2" href="/">Home  <span class="sr-only">(current)</span></a>
+         </li>
+         <li>
+              <a class="nav-link active" href="/thanks">Logout  <span class="sr-only">(current)</span></a>
+         </li>
+     </ul>
+  </nav>
+    <!-- <h3 class="text-black my-4">Fill Out clinical and Histopathological Attributes</h3> -->
+</div>
+
+<h3 color="black">{{ result }}</h3>
+
+  <div id="form_container">
+  
+    <h1><a>Fill Out Clinical and Histopathological Attributes</a></h1>
+    <form id="form_84156" class="appnitro"  method="post" action="/result">
+          <div class="form_description">
+      <h2>Classifying Dermatology Disease</h2>
+    </div>            
+
+<div class="container">
+  <form action="/result" method="POST">
+    <label for="erythema">1. Erythema</label>
+    <select id="erythema" name="erythema">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="scaling">2. Scaling</label>
+    <select id="scaling" name="scaling">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="borders">3. Definite borders</label>
+    <select id="borders" name="borders">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="itching">4. Itching</label>
+    <select id="itching" name="itching">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="koebner">5. koebner phenomenon</label>
+    <select id="koebner" name="koebner">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="polygonal">6. polygonal papules</label>
+    <select id="polygonal" name="polygonal">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="follicular">7. follicular papules</label>
+    <select id="follicular" name="follicular">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="oral">8. oral mucosal involvement</label>
+    <select id="oral" name="oral">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="knee">9. knee and elbow involvement</label>
+    <select id="knee" name="knee">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="scalp">10. Scalp involvement</label>
+    <select id="scalp" name="scalp">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="history"> 11. Family history</label>
+    <select id="history" name="history">
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </select>
+    <br>
+    <label for="melanin">12. Melanin incontinence</label>
+    <select id="melanin" name="melanin">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="eosinophils">13. Eosinophils in the infiltrate</label>
+    <select id="eosinophils" name="eosinophils">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="pnl">14. PNL infiltrate</label>
+    <select id="pnl" name="pnl">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="fibro">15. Fibrosis of the papillary dermis</label>
+    <select id="fibro" name="fibro">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="exo">16. Exocytosis</label>
+    <select id="exo" name="exo">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="acan">17. Acanthosis</label>
+    <select id="acan" name="acan">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="kera">18. Hyperkeratosis</label>
+    <select id="kera" name="kera">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="para">19. Paraketosis</label>
+    <select id="para" name="para">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="club">20. Clubbing of the rete ridges</label>
+    <select id="club" name="club">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="elon">21. Elongation of the rete ridges</label>
+    <select id="elon" name="elon">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="epi">22. Thinning of the suprapapillary epidermis</label>
+    <select id="epi" name="epi">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="pus">23. Spongiform pustule</label>
+    <select id="pus" name="pus">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="munro">24. Munro microabcess</label>
+    <select id="munro" name="munro">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="focal">25. Focal hypergranulosis</label>
+    <select id="focal" name="focal">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="layer">26. Disappearance of the granular layer</label>
+    <select id="layer" name="layer">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="basal">27. Vacuolisation and damage of basal layer</label>
+    <select id="basal" name="basal">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="spon">28. Spongiosis</label>
+    <select id="spon" name="spon">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="saw">29. Saw-tooth appearance of retes</label>
+    <select id="saw" name="saw">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="horn">30. Follicular horn plug</label>
+    <select id="horn" name="horn">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="peri">31. Perifollicular parakeratosis</label>
+    <select id="peri" name="peri">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="mono">32. Inflammatory monoluclear inflitrate</label>
+    <select id="mono" name="mono">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="band">33. Band-like infiltrate</label>
+    <select id="band" name="band">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <br>
+    <label for="age">age</label>
+    <input type="age" id="age" name="age" required>
+    <br>
+    
+    
+
+    
+    <input type="submit" class="btn btn-primary" value="Submit">
+  </form>
+</div>
+</body>
+<footer class="footer">
+   <p>Derm Detect 2019</p>
+</footer>
+</div>
+</body>
+</html>
