@@ -30,5 +30,5 @@ Login with the email and password
 
 Type in the stripe test data (cardnumber: 4242 4242 4242 4242, random exp, cvc, zipcode)
 
-You will be directed to form to fill clinical and histopathological attributes to classify the dermatology disease.
+You will be directed to form to fill clinical and histopathological attributes in order to classify the dermatology disease.
 
