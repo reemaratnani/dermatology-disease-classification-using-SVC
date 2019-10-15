@@ -22,6 +22,7 @@ Class code:   Class:
 4             pityriasis rosea                
 5             cronic dermatitis                   
 6             pityriasis rubra pilaris 
+
 https://archive.ics.uci.edu/ml/datasets/dermatology
 
 # Testing the app
