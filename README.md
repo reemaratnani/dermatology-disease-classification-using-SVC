@@ -1,5 +1,5 @@
 ## Differential diagnosis of erythemato-squamous diseases
-The diseases in this group are psoriasis, seboreic dermatitis, lichen planus, pityriasis rosea, cronic dermatitis, and pityriasis rubra pilaris. Usually a biopsy is necessary for the diagnosis but unfortunately these diseases share many histopathological features as well. Patients were first evaluated clinically with 12 features. Afterwards, skin samples were taken for the evaluation of 22 histopathological features. The values of the histopathological features are determined by an analysis of the samples under a microscope.
+The diseases in this group are psoriasis, seboreic dermatitis, lichen planus, pityriasis rosea, chronic dermatitis, and pityriasis rubra pilaris. Usually a biopsy is necessary for the diagnosis but unfortunately these diseases share many histopathological features as well. Patients were first evaluated clinically with 12 features. Afterwards, skin samples were taken for the evaluation of 22 histopathological features. The values of the histopathological features are determined by an analysis of the samples under a microscope.
 
 ## Dataset
 The family history feature has the value 1 if any of these diseases has been observed in the family, and 0 otherwise. 
@@ -20,7 +20,7 @@ Class code:   Class:
 2             seboreic dermatitis             
 3             lichen planus                   
 4             pityriasis rosea                
-5             cronic dermatitis                   
+5             chronic dermatitis                   
 6             pityriasis rubra pilaris 
 
 https://archive.ics.uci.edu/ml/datasets/dermatology
