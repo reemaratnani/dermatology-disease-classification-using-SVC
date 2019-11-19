@@ -1,4 +1,4 @@
-// Create a Stripe client.
+// Create a Stripe client. Use test key
 var stripe = Stripe('pk_test_MkbxGdtux22RvZ1iyEfNCPm500aKlYYtjb');
 
 // Create an instance of Elements.
